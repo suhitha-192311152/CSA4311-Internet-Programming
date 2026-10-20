@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+<title>Bus Ticket Booking</title> 
+
+<style> 
+
+body { font-family: Arial; margin: 30px; background: #f2f6fc; } 
+
+h1 { color: navy; } 
+
+input, button { padding: 8px; margin: 6px; } 
+
+#result { margin-top: 15px; background: #e2f7e7; padding: 12px; } 
+
+</style> 
+
+</head> 
+
+<body> 
+
+<h1>Bus Ticket Booking</h1> 
+
+<form onsubmit="bookTicket(event)"> 
+
+Passenger Name: <input id="name" required><br> 
+
+From: <input id="from" required><br> 
+
+To: <input id="to" required><br> 
+
+Journey Date: <input id="date" type="date" required><br> 
+
+Number of Seats: <input id="seats" type="number" min="1" max="6" value="1" required><br> 
+
+<button type="submit">Book Ticket</button> 
+
+</form> 
+
+<div id="result"></div> 
+
+<script> 
+
+function bookTicket(event) { 
+
+  event.preventDefault(); 
+
+  let name = document.getElementById("name").value; 
+
+  let from = document.getElementById("from").value; 
+
+  let to = document.getElementById("to").value; 
+
+  let date = document.getElementById("date").value; 
+
+  let seats = Number(document.getElementById("seats").value); 
+
+  if (from.toLowerCase() === to.toLowerCase()) { 
+
+    document.getElementById("result").innerHTML = "Source and destination must be different."; 
+
+    return; 
+
+  } 
+
+  document.getElementById("result").innerHTML = 
+
+    "<h3>Ticket Booked Successfully!</h3>Passenger: " + name + 
+
+    "<br>Route: " + from + " to " + to + "<br>Date: " + date + 
+
+    "<br>Seats: " + seats + "<br>Total Fare: Rs." + (seats * 500); 
+
+} 
+
+</script> 
+
+</body> 
+
+</html> 
