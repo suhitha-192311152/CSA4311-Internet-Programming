@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        input {
+            width: 100px;
+            padding: 5px;
+        }
+
+        .total {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Student Marks</h2>
+
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Student Name</th>
+        <th>CO1</th>
+        <th>CO2</th>
+        <th>Model Exam</th>
+        <th>Total</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td><input type="text"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td class="total">0</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td><input type="text"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td class="total">0</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td><input type="text"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td class="total">0</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td><input type="text"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td class="total">0</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td><input type="text"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td><input type="number" oninput="calculate(this)"></td>
+        <td class="total">0</td>
+    </tr>
+
+</table>
+
+<script>
+function calculate(input) {
+    let row = input.parentElement.parentElement;
+
+    let co1 = Number(row.cells[2].querySelector("input").value);
+    let co2 = Number(row.cells[3].querySelector("input").value);
+    let model = Number(row.cells[4].querySelector("input").value);
+
+    row.cells[5].innerHTML = co1 + co2 + model;
+}
+</script>
+
+</body>
+</html>
