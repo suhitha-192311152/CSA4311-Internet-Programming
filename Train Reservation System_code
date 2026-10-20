@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+<title>Train Reservation System</title> 
+
+<style> 
+
+body { font-family: Arial; margin: 30px; background: #f2f6fc; } 
+
+h1 { color: navy; } 
+
+input, select, button { padding: 8px; margin: 6px; } 
+
+#result { margin-top: 15px; background: #e2f7e7; padding: 12px; } 
+
+</style> 
+
+</head> 
+
+<body> 
+
+<h1>Train Reservation System</h1> 
+
+<form onsubmit="reserveTrain(event)"> 
+
+Passenger Name: <input id="name" required><br> 
+
+From: <input id="from" required><br> 
+
+To: <input id="to" required><br> 
+
+Journey Date: <input id="date" type="date" required><br> 
+
+Travel Class: 
+
+<select id="class"> 
+
+<option value="500">Sleeper - Rs.500</option> 
+
+<option value="1000">AC Class - Rs.1000</option> 
+
+<option value="1500">First Class - Rs.1500</option> 
+
+</select><br> 
+
+<button type="submit">Reserve Train</button> 
+
+</form> 
+
+<div id="result"></div> 
+
+<script> 
+
+function reserveTrain(event) { 
+
+  event.preventDefault(); 
+
+  let name = document.getElementById("name").value; 
+
+  let from = document.getElementById("from").value; 
+
+  let to = document.getElementById("to").value; 
+
+  let date = document.getElementById("date").value; 
+
+  let travel = document.getElementById("class"); 
+
+  let fare = travel.value; 
+
+  let type = travel.options[travel.selectedIndex].text.split(" - ")[0]; 
+
+  if (from.toLowerCase() === to.toLowerCase()) { 
+
+    document.getElementById("result").innerHTML = "Source and destination must be different."; 
+
+    return; 
+
+  } 
+
+  document.getElementById("result").innerHTML = 
+
+    "<h3>Reservation Successful!</h3>Passenger: " + name + 
+
+    "<br>Route: " + from + " to " + to + "<br>Date: " + date + 
+
+    "<br>Class: " + type + "<br>Fare: Rs." + fare + 
+
+    "<br>Demo PNR: 1234567890"; 
+
+} 
+
+</script> 
+
+</body> 
+
+</html> 
