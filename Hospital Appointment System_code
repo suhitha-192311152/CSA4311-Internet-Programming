@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+<meta charset="UTF-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>Hospital Appointment System</title> 
+
+<style> 
+
+body { font-family: Arial, sans-serif; background: #eef3f8; margin: 0; padding: 30px; } 
+
+main { max-width: 650px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 12px #ccd3dc; } 
+
+h1 { color: #174a7e; font-size: 25px; } 
+
+label { display: block; margin: 18px 0 6px; } 
+
+input, button { box-sizing: border-box; padding: 11px; width: 100%; margin-top: 6px; } 
+
+button { background: #1769aa; color: white; border: 0; border-radius: 6px; cursor: pointer; } 
+
+#result { margin-top: 18px; padding: 14px; background: #e6f7e9; border-radius: 6px; min-height: 20px; } 
+
+small { color: #555; } 
+
+</style> 
+
+</head> 
+
+<body> 
+
+<main> 
+
+<h1>Hospital Appointment System</h1> 
+
+<p>Enter the details below and select the button to view the result.</p> 
+
+<form onsubmit="showResult(event)"> 
+
+<label for="value">Patient name</label> 
+
+<input id="value" type="text" value="Suhitha" required> 
+
+<button type="submit">Book appointment</button> 
+
+</form> 
+
+<div id="result" aria-live="polite">Output will appear here.</div> 
+
+</main> 
+
+<script> 
+
+function showResult(event) { 
+
+ event.preventDefault(); 
+
+ const result = document.getElementById('result'); 
+
+ const value=document.getElementById('value').value.trim(); if(!value){result.textContent='Please enter patient name.';return;} result.innerHTML='<strong>Success!</strong><br>Book appointment: '+value+'<br><small>Demo output only. Data is not saved to a server.</small>'; 
+
+} 
+
+// Automatically show a sample output when opened with ?demo=1 for the screenshot. 
+
+if (new URLSearchParams(location.search).get('demo') === '1') { 
+
+ document.querySelector('form').requestSubmit(); 
+
+} 
+
+</script> 
+
+</body> 
+
+</html>
