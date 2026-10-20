@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+
+<title>Flight Reservation System</title> 
+
+<style> 
+
+body { font-family: Arial; margin: 30px; background: #f2f6fc; } 
+
+h1 { color: navy; } 
+
+input, select, button { padding: 8px; margin: 6px; } 
+
+#result { margin-top: 15px; background: #e2f7e7; padding: 12px; } 
+
+</style> 
+
+</head> 
+
+<body> 
+
+<h1>Flight Reservation System</h1> 
+
+<form onsubmit="searchFlight(event)"> 
+
+Passenger Name: <input id="name" required><br> 
+
+From: <input id="from" required><br> 
+
+Destination: <input id="to" required><br> 
+
+Departure Date: <input id="date" type="date" required><br> 
+
+Travel Class: 
+
+<select id="class"> 
+
+<option value="5000">Economy - Rs.5000</option> 
+
+<option value="10000">Business - Rs.10000</option> 
+
+<option value="15000">First Class - Rs.15000</option> 
+
+</select><br> 
+
+<button type="submit">Search Flight</button> 
+
+</form> 
+
+<div id="result"></div> 
+
+<script> 
+
+function searchFlight(event) { 
+
+  event.preventDefault(); 
+
+  let name = document.getElementById("name").value; 
+
+  let from = document.getElementById("from").value; 
+
+  let to = document.getElementById("to").value; 
+
+  let date = document.getElementById("date").value; 
+
+  let travel = document.getElementById("class"); 
+
+  let fare = travel.value; 
+
+  let type = travel.options[travel.selectedIndex].text.split(" - ")[0]; 
+
+  if (from.toLowerCase() === to.toLowerCase()) { 
+
+    document.getElementById("result").innerHTML = "Departure and destination must be different."; 
+
+    return; 
+
+  } 
+
+  document.getElementById("result").innerHTML = 
+
+    "<h3>Flight Found!</h3>Passenger: " + name + 
+
+    "<br>Route: " + from + " to " + to + "<br>Date: " + date + 
+
+    "<br>Class: " + type + "<br>Fare: Rs." + fare; 
+
+} 
+
+</script> 
+
+</body> 
+
+</html> 
