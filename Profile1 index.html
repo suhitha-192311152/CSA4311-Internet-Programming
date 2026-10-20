@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pamudurthi Suhitha | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .profile-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: white;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 45px;
+            font-weight: bold;
+            border: 5px solid #dbeafe;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        /* Sections */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1e3a8a;
+        }
+
+        /* About */
+
+        .about-box {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .about-box p {
+            font-size: 16px;
+        }
+
+        .about-box strong {
+            color: #1e3a8a;
+        }
+
+        /* Education */
+
+        .education-card {
+            background-color: white;
+            padding: 30px;
+            border-left: 6px solid #2563eb;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        /* Skills */
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: white;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            font-weight: bold;
+            min-width: 180px;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        /* Projects */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        /* Strengths */
+
+        .strengths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .strength {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Hobbies */
+
+        .hobbies {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hobby {
+            background-color: white;
+            padding: 25px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-weight: bold;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background-color: #111827;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+        }
+
+        .contact-box a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h3 {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <h2>Suhitha</h2>
+
+        <ul>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#hobbies">Hobbies</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="profile-circle">
+                PS
+            </div>
+
+            <h1>PAMUDURTHI SUHITHA</h1>
+
+            <h3>Computer Science and Engineering Student</h3>
+
+            <p>
+                Aspiring Software Developer | Java Enthusiast
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-box">
+
+            <p>
+                I am <strong>Pamudurthi Suhitha</strong>, a dedicated and
+                enthusiastic Computer Science and Engineering student
+                pursuing my B.E at <strong>SIMATS Engineering</strong>.
+                I am currently pursuing my degree from 2023 to 2027
+                and have maintained a CGPA of <strong>8.6</strong>.
+            </p>
+
+            <br>
+
+            <p>
+                I have a strong interest in
+                <strong>software development, programming, and problem
+                solving</strong>. I am particularly interested in Java
+                and enjoy understanding how software applications are
+                designed and developed. I am continuously working on
+                improving my programming fundamentals and strengthening
+                my logical thinking skills.
+            </p>
+
+            <br>
+
+            <p>
+                As a Computer Science student, I am interested in learning
+                different areas of technology and understanding how they
+                can be used to solve real-world problems. I believe that
+                consistent learning, practical implementation, and
+                hands-on experience are important for becoming a successful
+                software professional.
+            </p>
+
+            <br>
+
+            <p>
+                I consider myself a
+                <strong>quick learner, self-motivated individual, and
+                problem solver</strong>. I enjoy taking on new challenges
+                and learning from them. I also value teamwork, communication,
+                and the ability to adapt to new technologies and working
+                environments.
+            </p>
+
+            <br>
+
+            <p>
+                Outside academics, I enjoy
+                <strong>playing games and listening to music</strong>.
+                These activities help me relax and maintain a balanced
+                lifestyle. I also enjoy exploring new ideas and improving
+                my knowledge through continuous learning.
+            </p>
+
+            <br>
+
+            <p>
+                My career goal is to begin my journey as a
+                <strong>software developer</strong> where I can apply my
+                technical knowledge, gain practical industry experience,
+                contribute to meaningful projects, and continuously grow
+                as a technology professional.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                B.E - Computer Science and Engineering
+            </h3>
+
+            <p>
+                <strong>Institution:</strong>
+                SIMATS Engineering
+            </p>
+
+            <p>
+                <strong>CGPA:</strong>
+                8.6
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                2023 - 2027
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                ☕ Java
+            </div>
+
+            <div class="skill">
+                💻 Object-Oriented Programming
+            </div>
+
+            <div class="skill">
+                🧠 Problem Solving
+            </div>
+
+            <div class="skill">
+                📊 Data Structures
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+
+                <h3>
+                    Java Application
+                </h3>
+
+                <p>
+                    An academic Java-based application developed to
+                    understand object-oriented programming, application
+                    logic, and software development concepts.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Future Project
+                </h3>
+
+                <p>
+                    Interested in developing real-world software applications
+                    using Java and modern technologies to solve practical
+                    problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STRENGTHS ================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            My Strengths
+        </h2>
+
+        <div class="strengths">
+
+            <div class="strength">
+                Quick Learner
+            </div>
+
+            <div class="strength">
+                Problem Solver
+            </div>
+
+            <div class="strength">
+                Teamwork
+            </div>
+
+            <div class="strength">
+                Self Motivated
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HOBBIES ================= -->
+
+    <section id="hobbies">
+
+        <h2 class="section-title">
+            Hobbies & Interests
+        </h2>
+
+        <div class="hobbies">
+
+            <div class="hobby">
+                🎮 Playing Games
+            </div>
+
+            <div class="hobby">
+                🎵 Listening to Music
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <div class="contact-box">
+
+            <p>
+                📧
+                <strong>Email:</strong>
+
+                <a href="mailto:suhitha2114@gmail.com">
+                    suhitha2114@gmail.com
+                </a>
+            </p>
+
+            <p>
+                📍
+                <strong>Location:</strong>
+                KR Kandrika, Railway Kodur, Kadapa,
+                Andhra Pradesh - 516101
+            </p>
+
+            <p>
+                💼
+                <strong>GitHub:</strong>
+
+                <a href="https://github.com/" target="_blank">
+                    Add GitHub
+                </a>
+            </p>
+
+            <p>
+                🔗
+                <strong>LinkedIn:</strong>
+
+                <a href="https://www.linkedin.com/" target="_blank">
+                    Add LinkedIn
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 PAMUDURTHI SUHITHA
+        </p>
+
+        <p>
+            Computer Science and Engineering
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
